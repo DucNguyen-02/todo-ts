@@ -1,0 +1,5 @@
+export const ADD_TASK: string = 'ADD_TASK'
+export const REMOVE_TASK: string = 'REMOVE_TASK'
+export const EDIT_TASK: string = 'EDIT_TASK'
+export const SET_TASK: string = 'SET_TASK'
+export const SHOW_ALERT: string = 'SHOW_ALERT'

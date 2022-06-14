@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { useSelector } from 'react-redux'
+import { IRootState } from './alias/alias'
+import InputField from './components/InputField'
+import ListTask from './components/ListTask'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App: React.FC = () => {
+    const tasks = useSelector((state: IRootState) => state.listTask)
+
+    return (
+        <section className=" d-block p-5 w-50 bg-danger text-center mx-auto my-5 rounded">
+            <InputField listTask={tasks} />
+            <ListTask listTask={tasks} />
+        </section>
+    )
 }
 
-export default App;
+export default App
